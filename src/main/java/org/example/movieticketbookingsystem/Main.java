@@ -17,8 +17,8 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.show();
         stage.setTitle("Movie Ticket Booking System");
-        //Image image = new Image("file:src/images.jpg");
-        //stage.getIcons().add(image);
+        Image image = new Image("file:src/cinema.jpg");
+        stage.getIcons().add(image);
         stage.setResizable(false);
     }
 

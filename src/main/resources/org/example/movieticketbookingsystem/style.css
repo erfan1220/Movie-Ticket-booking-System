@@ -1,31 +1,33 @@
-.left-side1{
+.Login-bc-color{
     -fx-background-color: linear-gradient(to bottom right, #022BF7, #02F7BF);
 }
-.left-side2{
-    -fx-background-color: linear-gradient(to bottom right, #0f6789, #286155);
-}
-.right-side{
-    -fx-background-color: linear-gradient(to bottom left, #022BF7, #02F7BF);
-}
 .login-border{
-    -fx-border-color: #286155;
-    -fx-border-width: 0 0 0 3px;
+    -fx-border-color: #ffa100;
+    -fx-border-width: 0 0 0 4px;
     -fx-padding: 0 0 0 5px;
 }
-.login-border2{
-    -fx-border-color: #286155;
-    -fx-border-width: 0 3px 0 3px;
-    -fx-padding: 0 5px 0 5px;
-}
+
 .btn{
-    -fx-background-color: linear-gradient(to bottom right, #098c53, #246861);;
+    -fx-background-color: linear-gradient(to bottom right,#098c53, #246861 );;
     -fx-text-fill: #fff;
     -fx-background-radius: 5px;
     -fx-cursor: hand;
     -fx-font-size: 14px;
 }
 .btn:hover{
-    -fx-background-color: linear-gradient(to bottom right, #0fb565, #399a8f);;
+    -fx-background-color: linear-gradient(to bottom right, #0fb565, #399a8f);
+}
+
+.left-side2{
+    -fx-background-color: linear-gradient(to bottom right, #0f6789, #286155);
+}
+.right-side{
+    -fx-background-color: linear-gradient(to bottom left, #022BF7, #02F7BF);
+}
+.login-border2{
+    -fx-border-color: #286155;
+    -fx-border-width: 0 3px 0 3px;
+    -fx-padding: 0 5px 0 5px;
 }
 .head{
 -fx-background-color: linear-gradient(to bottom left, #00d4ff, #0009ff);
