@@ -14,17 +14,17 @@
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="Login-bc-color" stylesheets="@style.css">
          <children>
-            <TextField layoutX="81.0" layoutY="225.0" prefHeight="30.0" prefWidth="238.0" promptText="Username" />
+            <TextField fx:id="username" layoutX="81.0" layoutY="225.0" prefHeight="30.0" prefWidth="238.0" promptText="Username" styleClass="text-field-CreateAccount" stylesheets="@style.css" />
             <Label layoutX="44.0" layoutY="141.0" styleClass="login-border" stylesheets="@style.css" text="Create Account" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font></Label>
-            <PasswordField layoutX="80.0" layoutY="269.0" prefHeight="30.0" prefWidth="238.0" promptText="Password" />
-            <TextField layoutX="80.0" layoutY="309.0" prefHeight="30.0" prefWidth="238.0" promptText="Phone Number" />
-            <TextField layoutX="81.0" layoutY="350.0" prefHeight="30.0" prefWidth="238.0" promptText="Email" />
+            <PasswordField fx:id="password" layoutX="80.0" layoutY="269.0" prefHeight="30.0" prefWidth="238.0" promptText="Password" styleClass="text-field-CreateAccount" stylesheets="@style.css" />
+            <TextField fx:id="phonenumber" layoutX="80.0" layoutY="309.0" prefHeight="30.0" prefWidth="238.0" promptText="Phone Number" styleClass="text-field-CreateAccount" stylesheets="@style.css" />
+            <TextField fx:id="email" layoutX="81.0" layoutY="350.0" prefHeight="30.0" prefWidth="238.0" promptText="Email" styleClass="text-field-CreateAccount" stylesheets="@style.css" />
             <FontAwesomeIcon glyphName="MOBILE" layoutX="298.0" layoutY="332.0" selectionFill="#8c7878" size="2em" wrappingWidth="8.514273643493652" />
-            <Button layoutX="87.0" layoutY="430.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="238.0" styleClass="btn" stylesheets="@style.css" text="Create" />
-            <Hyperlink layoutX="153.0" layoutY="496.0" onAction="#login" text="Have Account" textFill="WHITE">
+            <Button layoutX="87.0" layoutY="430.0" mnemonicParsing="false" onAction="#createbtn" prefHeight="40.0" prefWidth="238.0" styleClass="btn" stylesheets="@style.css" text="Create" />
+            <Hyperlink layoutX="153.0" layoutY="496.0" onAction="#login" stylesheets="@style.css" text="Have Account" textFill="WHITE">
                <font>
                   <Font name="System Italic" size="16.0" />
                </font>
