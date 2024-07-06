@@ -58,6 +58,13 @@
 -fx-border-color:#00d0ff;
 -fx-border-width:0px 0px 2px 0px;
 }
+.textfield2{
+-fx-background-color:transparent;
+-fx-border-color:#000000;
+-fx-background-color:#ffffff;
+-fx-border-radius:4px;
+-fx-border-width:1px 1px 1px 1px;
+}
 .box{
 -fx-background-color: #fff;
 -fx-border-radius: 5px;

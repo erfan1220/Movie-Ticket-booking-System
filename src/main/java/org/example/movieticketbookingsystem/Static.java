@@ -5,6 +5,12 @@ import java.security.PublicKey;
 public class Static {
     public static String usernameC;
     public static String username;
+    public static String path;
+    public static String cinema;
+    public static int id;
+    public static String path_Movie;
+    public static String moviename;
+    public static String movietime;
     public static String Password;
     public static String Phone;
     public static String mail;

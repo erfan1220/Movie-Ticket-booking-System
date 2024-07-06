@@ -11,14 +11,14 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.movieticketbookingsystem.Admin">
    <children>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+      <AnchorPane fx:id="AddCinema_Form" prefHeight="200.0" prefWidth="200.0">
          <children>
             <AnchorPane prefHeight="50.0" prefWidth="800.0" styleClass="head" stylesheets="@style.css">
                <children>
-                  <Button layoutX="46.0" layoutY="12.0" mnemonicParsing="false" styleClass="btn2" stylesheets="@style.css" text="Sign Out" textFill="WHITE" />
-                  <Button layoutX="160.0" layoutY="12.0" mnemonicParsing="false" styleClass="btn2" stylesheets="@style.css" text="Add Movie" textFill="WHITE" />
+                  <Button fx:id="signout_btn" layoutX="46.0" layoutY="12.0" mnemonicParsing="false" onAction="#login" styleClass="btn2" stylesheets="@style.css" text="Sign Out" textFill="WHITE" />
+                  <Button layoutX="160.0" layoutY="12.0" mnemonicParsing="false" onAction="#addmovie" styleClass="btn2" stylesheets="@style.css" text="Add Movie" textFill="WHITE" />
                   <FontAwesomeIcon fill="#dbff08" glyphName="PLAY" layoutX="736.0" layoutY="39.0" size="2.75em" />
                   <Label layoutX="529.0" layoutY="15.0" text="Movie Ticket Booking System" textFill="#eeff00">
                      <font>
@@ -29,24 +29,24 @@
             </AnchorPane>
             <AnchorPane layoutX="305.0" layoutY="51.0" prefHeight="550.0" prefWidth="495.0" styleClass="box" stylesheets="@style.css">
                <children>
-                  <TableView layoutX="3.0" layoutY="2.0" prefHeight="550.0" prefWidth="490.0" styleClass="table" stylesheets="@style.css">
+                  <TableView fx:id="cinema_tableview" layoutX="3.0" layoutY="2.0" onMouseClicked="#select" prefHeight="550.0" prefWidth="490.0" styleClass="table" stylesheets="@style.css">
                     <columns>
-                      <TableColumn prefWidth="152.0" text="Cinema Name" />
-                      <TableColumn prefWidth="264.00006103515625" text="Address" />
-                        <TableColumn prefWidth="71.20001220703125" text="Rate" />
+                      <TableColumn fx:id="cinemaname_tableview" prefWidth="152.0" text="Cinema Name" />
+                      <TableColumn fx:id="address_tableview" prefWidth="264.00006103515625" text="Address" />
+                        <TableColumn fx:id="rate_tableview" prefWidth="71.20001220703125" text="Rate" />
                     </columns>
                   </TableView>
                </children>
             </AnchorPane>
             <AnchorPane layoutX="1.0" layoutY="51.0" prefHeight="550.0" prefWidth="300.0" styleClass="box" stylesheets="@style.css">
                <children>
-                  <Button layoutX="21.0" layoutY="416.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="95.0" styleClass="btn" stylesheets="@style.css" text="Insert" />
-                  <Button layoutX="170.0" layoutY="416.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="95.0" styleClass="btn" stylesheets="@style.css" text="Delete" />
-                  <Button layoutX="170.0" layoutY="459.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="95.0" styleClass="btn" stylesheets="@style.css" text="Update" />
-                  <Button layoutX="21.0" layoutY="459.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="95.0" styleClass="btn" stylesheets="@style.css" text="Clear" />
-                  <TextField layoutX="136.0" layoutY="285.0" />
-                  <TextField layoutX="136.0" layoutY="362.0" />
-                  <TextField layoutX="136.0" layoutY="325.0" />
+                  <Button fx:id="insert_btn" layoutX="21.0" layoutY="416.0" mnemonicParsing="false" onAction="#insert" prefHeight="30.0" prefWidth="95.0" styleClass="btn" stylesheets="@style.css" text="Insert" />
+                  <Button layoutX="170.0" layoutY="416.0" mnemonicParsing="false" onAction="#delete" prefHeight="30.0" prefWidth="95.0" styleClass="btn" stylesheets="@style.css" text="Delete" />
+                  <Button fx:id="update_btn" layoutX="170.0" layoutY="459.0" mnemonicParsing="false" onAction="#update" prefHeight="30.0" prefWidth="95.0" styleClass="btn" stylesheets="@style.css" text="Update" />
+                  <Button fx:id="clear_btn" layoutX="21.0" layoutY="459.0" mnemonicParsing="false" onAction="#clear" prefHeight="30.0" prefWidth="95.0" styleClass="btn" stylesheets="@style.css" text="Clear" />
+                  <TextField fx:id="cinema_name" layoutX="136.0" layoutY="285.0" styleClass="textfield2" stylesheets="@style.css" />
+                  <TextField fx:id="cinema_rate" layoutX="136.0" layoutY="362.0" styleClass="textfield2" stylesheets="@style.css" />
+                  <TextField fx:id="cinema_address" layoutX="136.0" layoutY="325.0" styleClass="textfield2" stylesheets="@style.css" />
                   <Label layoutX="34.0" layoutY="289.0" text="Cinema Name :">
                      <font>
                         <Font name="System Bold" size="12.0" />
@@ -64,10 +64,10 @@
                   </Label>
                   <AnchorPane layoutX="56.0" layoutY="24.0" prefHeight="175.0" prefWidth="178.0" styleClass="box" stylesheets="@style.css">
                      <children>
-                        <ImageView fitHeight="175.0" fitWidth="178.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <ImageView fx:id="add_cinema_imageview" fitHeight="175.0" fitWidth="178.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                      </children>
                   </AnchorPane>
-                  <Button layoutX="98.0" layoutY="217.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="95.0" styleClass="btn" stylesheets="@style.css" text="Import" />
+                  <Button fx:id="import_btn" layoutX="98.0" layoutY="217.0" mnemonicParsing="false" onAction="#import_image" prefHeight="30.0" prefWidth="95.0" styleClass="btn" stylesheets="@style.css" text="Import" />
                </children>
             </AnchorPane>
          </children>
