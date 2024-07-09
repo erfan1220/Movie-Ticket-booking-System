@@ -152,7 +152,7 @@ public class AddMovie implements Initializable {
                 prepare.setString(3, Genre.getText());
                 prepare.setString(4, Duration.getText());
                 prepare.setString(5, Cinema.getText());
-                prepare.setString(6, Title.getText());
+                prepare.setString(6, Time.getText());
                 String uri = Static.path_Movie;
                 uri = uri.replace("\\", "\\\\");
                 prepare.setString(7, uri);
@@ -198,8 +198,8 @@ public class AddMovie implements Initializable {
             String Update = "UPDATE movieadd SET Title = '"+Title.getText()+"',  Director = '"+
                     Director.getText()+"', Genre = '"+Genre.getText()+"', Duration = '"+
                     Duration.getText()+"', Cinema = '"+Cinema.getText()+"', Time ='" +
-                    Time.getText()+"', Image = '"+url+"' WHERE Title = '"+Static.movietime+"' AND " +
-                    "Time = '"+Static.movietime+"'";
+                    Time.getText()+"', Image = '"+url+"' WHERE Title = '"+Static.moviename+"' AND " +
+                    "Time = '"+Static.movietime+"' AND Cinema = '"+Static.cinema+"'";
 
 
             connect = Database.CODB();
@@ -249,6 +249,7 @@ public class AddMovie implements Initializable {
         Static.movietime = MD.getTime();
         //System.out.println(Static.id);
         Static.path_Movie = MD.getImage();
+        Static.cinema = MD.getCinema();
     }
 
     @Override

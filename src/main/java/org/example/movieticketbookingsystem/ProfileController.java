@@ -3,6 +3,7 @@ package org.example.movieticketbookingsystem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
@@ -28,7 +29,7 @@ public class ProfileController implements Initializable {
     private TextField PersonalPhone;
 
     @FXML
-    private TextField PersonalUsername;
+    private Label PersonalUsername;
 
     public void back(ActionEvent event) throws IOException {
         Switch s = new Switch();

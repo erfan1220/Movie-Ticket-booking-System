@@ -11,10 +11,9 @@
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="Profile" stylesheets="@style.css">
          <children>
-            <TextField fx:id="PersonalUsername" layoutX="112.0" layoutY="221.0" prefHeight="30.0" prefWidth="230.0" />
-            <TextField fx:id="PersonalPhone" layoutX="112.0" layoutY="314.0" prefHeight="30.0" prefWidth="230.0" />
-            <TextField fx:id="PersonalPassword" layoutX="112.0" layoutY="268.0" prefHeight="30.0" prefWidth="230.0" />
-            <TextField fx:id="PersonalEmail" layoutX="112.0" layoutY="357.0" prefHeight="30.0" prefWidth="230.0" />
+            <TextField fx:id="PersonalPhone" layoutX="112.0" layoutY="314.0" prefHeight="30.0" prefWidth="230.0" styleClass="text-field-CreateAccount" stylesheets="@style.css" />
+            <TextField fx:id="PersonalPassword" layoutX="112.0" layoutY="268.0" prefHeight="30.0" prefWidth="230.0" styleClass="text-field-CreateAccount" stylesheets="@style.css" />
+            <TextField fx:id="PersonalEmail" layoutX="112.0" layoutY="357.0" prefHeight="30.0" prefWidth="230.0" styleClass="text-field-CreateAccount" stylesheets="@style.css" />
             <Label layoutX="29.0" layoutY="226.0" text="Username :" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="13.0" />
@@ -40,6 +39,11 @@
             <Label layoutX="94.0" layoutY="117.0" text="Personal Information">
                <font>
                   <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="PersonalUsername" alignment="TOP_CENTER" layoutX="125.0" layoutY="222.0" prefHeight="27.0" prefWidth="97.0" text="Label" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
                </font>
             </Label>
          </children>
