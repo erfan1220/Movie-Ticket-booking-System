@@ -210,13 +210,14 @@ public class SeatController2 extends ProfileController {
         }
     }
     public void insert() throws SQLException {
-        String sql = "INSERT INTO history (MovieTitle, Time,Cinema,user)" +
-                "VALUES(?,?,?,?)";
+        String sql = "INSERT INTO history (MovieTitle, Time,Cinema,user,Seat)" +
+                "VALUES(?,?,?,?,?)";
         prepare = connect.prepareStatement(sql);
         prepare.setString(1, Static.moviename);
         prepare.setString(2, Static.movietime);
         prepare.setString(3, Static.cinema);
         prepare.setString(4, Static.username);
+        prepare.setString(5,Static.seat);
         prepare.executeUpdate();
     }
 
