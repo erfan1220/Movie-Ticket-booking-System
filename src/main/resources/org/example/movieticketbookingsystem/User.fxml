@@ -70,7 +70,7 @@
                         <ImageView fx:id="Movie_information_imageview" fitHeight="175.0" fitWidth="178.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true" />
                      </children>
                   </AnchorPane>
-                  <Button layoutX="628.0" layoutY="610.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" styleClass="btn" stylesheets="@style.css" text="Buy" />
+                  <Button layoutX="628.0" layoutY="610.0" mnemonicParsing="false" onAction="#buy" prefHeight="34.0" prefWidth="100.0" styleClass="btn" stylesheets="@style.css" text="Buy" />
                   <Label fx:id="cinema_name_lable" layoutX="133.0" layoutY="316.0" text="Label" visible="false" />
                </children>
             </AnchorPane>

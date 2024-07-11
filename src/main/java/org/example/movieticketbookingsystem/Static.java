@@ -10,6 +10,7 @@ public class Static {
     public static String path_Movie;
     public static String moviename;
     public static String movietime;
+    public static String seat;
     public static String Password;
     public static String Phone;
     public static String mail;

@@ -183,6 +183,10 @@ public class UserController extends RegisterController implements Initializable 
         image_Movie = new Image(uri, 178, 175, false, true);
         Movie_information_imageview.setImage(image_Movie);
     }
+    public void buy(ActionEvent event) throws IOException {
+        Switch s = new Switch();
+        s.switchto(event , "Seat.fxml");
+    }
 
 
 
