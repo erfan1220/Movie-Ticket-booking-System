@@ -182,6 +182,9 @@ public class UserController extends RegisterController implements Initializable 
         String uri = "file:" + MD.getImage();
         image_Movie = new Image(uri, 178, 175, false, true);
         Movie_information_imageview.setImage(image_Movie);
+        Static.moviename = MD.getTitle();
+        Static.cinema = MD.getCinema();
+        Static.movietime = MD.getTime();
     }
     public void buy(ActionEvent event) throws IOException {
         Switch s = new Switch();

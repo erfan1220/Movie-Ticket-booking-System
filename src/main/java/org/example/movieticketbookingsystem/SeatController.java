@@ -176,23 +176,18 @@ public class SeatController extends SeatController2 implements Initializable {
     private Connection connect;
     private PreparedStatement prepare;
     private ResultSet resultSet;
-
-    public void display()  {
+    public void sh() throws SQLException {
         Button[] a = {One, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Eleven, Twelve, Thirteen,
                 Fourteen, Fifteen, Sixteen, Seventeen, Eighteen, Nineteen, Twenty, T_one, T_two, T_three, T_four,
                 T_five, T_six, T_s, T_eight, T_nine, Thirty, Th_one, Th_two, Th_three, Th_four, Th_five,
                 Th_six, Th_seven, Th_eight, Th_eight, Th_nine, Forty, F_one, F_two, F_three, F_four,
                 F_five, F_six, F_seven, F_eight, F_nine, Fifty, Fifty_one, Fifty_two, Fifty_three, Fifty_four};
-        for (int i = 1; i < 56; i++) {
+        for(int i=1; i<56; i++){
             String sql = "SELECT Seat FROM seat WHERE Cinema = '" + Static.cinema + "' AND Time = '"
                     + Static.movietime + "' AND MovieTitle = '" + Static.moviename + "' AND " +
                     "Seat = '" + i + "'";
-            try {
-                connect = Database.CODB();
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
-            try {
+            connect = Database.CODB();
+            try{
                 prepare = connect.prepareStatement(sql);
                 resultSet = prepare.executeQuery();
                 if (resultSet.next()) {
@@ -200,13 +195,17 @@ public class SeatController extends SeatController2 implements Initializable {
                 } else {
                     a[i - 1].setStyle("-fx-background-color :green;");
                 }
-            } catch (Exception e) {
+            }catch (Exception e){
                 e.printStackTrace();
             }
         }
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        display();
+        try {
+            sh();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

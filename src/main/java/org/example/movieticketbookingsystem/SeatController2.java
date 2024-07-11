@@ -4,7 +4,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
-public class SeatController2 extends ProfileController{
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class SeatController2 extends ProfileController {
     @FXML
     private Button Eight;
 
@@ -166,118 +171,322 @@ public class SeatController2 extends ProfileController{
 
     @FXML
     private Button Two;
-    public void b1(ActionEvent event){
+
+    private PreparedStatement prepare;
+    private Connection connect;
+    private ResultSet resultSet;
+    private Alert alert;
+
+    public void Button(ActionEvent event) throws SQLException {
+        connect = Database.CODB();
+        try {
+            String sql = "SELECT Seat FROM seat WHERE Cinema = '" +
+                    Static.cinema + "' AND MovieTitle = '" + Static.moviename + "' AND " +
+                    "Time = '" + Static.movietime + "' AND Seat = '"+Static.seat+"'";
+            prepare = connect.prepareStatement(sql);
+            resultSet = prepare.executeQuery();
+            if (resultSet.next()) {
+                alert = new Alert();
+                alert.Error("This place has already been booked.");
+            } else {
+                String mysql = "INSERT INTO seat (Cinema , MovieTitle, Time,Seat)" +
+                        "VALUES(?,?,?,?)";
+                prepare = connect.prepareStatement(mysql);
+                prepare.setString(1, Static.cinema);
+                prepare.setString(2, Static.moviename);
+                prepare.setString(3, Static.movietime);
+                prepare.setString(4, Static.seat);
+                prepare.executeUpdate();
+
+                insert();
+
+                alert = new Alert();
+                alert.information("Successful.");
+
+                back(event);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void insert() throws SQLException {
+        String sql = "INSERT INTO history (MovieTitle, Time,Cinema,user)" +
+                "VALUES(?,?,?,?)";
+        prepare = connect.prepareStatement(sql);
+        prepare.setString(1, Static.moviename);
+        prepare.setString(2, Static.movietime);
+        prepare.setString(3, Static.cinema);
+        prepare.setString(4, Static.username);
+        prepare.executeUpdate();
+    }
+
+    public void b1(ActionEvent event) throws SQLException {
         Static.seat = One.getText();
+        Button(event);
     }
-    public void b2(ActionEvent event){
+
+    public void b2(ActionEvent event) throws SQLException {
         Static.seat = Two.getText();
+        Button(event);
     }
-    public void b3(ActionEvent event){
+
+    public void b3(ActionEvent event) throws SQLException {
         Static.seat = Three.getText();
+        Button(event);
     }
-    public void b4(ActionEvent event){
+
+    public void b4(ActionEvent event) throws SQLException {
         Static.seat = Four.getText();
+        Button(event);
     }
-    public void b5(ActionEvent event){
+
+    public void b5(ActionEvent event) throws SQLException {
         Static.seat = Five.getText();
+        Button(event);
     }
-    public void b6(){
+
+    public void b6(ActionEvent event) throws SQLException {
         Static.seat = Six.getText();
-    }public void b7(){
+        Button(event);
+    }
+
+    public void b7(ActionEvent event) throws SQLException {
         Static.seat = Seven.getText();
-    }public void b8(){
+        Button(event);
+    }
+
+    public void b8(ActionEvent event) throws SQLException {
         Static.seat = Eight.getText();
-    }public void b9(){
+        Button(event);
+    }
+
+    public void b9(ActionEvent event) throws SQLException {
         Static.seat = Nine.getText();
-    }public void b10(){
+        Button(event);
+    }
+
+    public void b10(ActionEvent event) throws SQLException {
         Static.seat = Ten.getText();
-    }public void b11(){
+        Button(event);
+    }
+
+    public void b11(ActionEvent event) throws SQLException {
         Static.seat = Eleven.getText();
-    }public void b12(){
+        Button(event);
+    }
+
+    public void b12(ActionEvent event) throws SQLException {
         Static.seat = Twelve.getText();
-    }public void b13(){
+        Button(event);
+    }
+
+    public void b13(ActionEvent event) throws SQLException {
         Static.seat = Thirteen.getText();
-    }public void b14(){
+        Button(event);
+    }
+
+    public void b14(ActionEvent event) throws SQLException {
         Static.seat = Fourteen.getText();
-    }public void b15(){
+        Button(event);
+    }
+
+    public void b15(ActionEvent event) throws SQLException {
         Static.seat = Fifteen.getText();
-    }public void b16(){
+        Button(event);
+    }
+
+    public void b16(ActionEvent event) throws SQLException {
         Static.seat = Sixteen.getText();
-    }public void b17(){
+        Button(event);
+    }
+
+    public void b17(ActionEvent event) throws SQLException {
         Static.seat = Seventeen.getText();
-    }public void b18(){
+        Button(event);
+    }
+
+    public void b18(ActionEvent event) throws SQLException {
         Static.seat = Eighteen.getText();
-    }public void b19(){
+        Button(event);
+    }
+
+    public void b19(ActionEvent event) throws SQLException {
         Static.seat = Nineteen.getText();
-    }public void b20(){
+        Button(event);
+    }
+
+    public void b20(ActionEvent event) throws SQLException {
         Static.seat = Twenty.getText();
-    }public void b21(){
+        Button(event);
+    }
+
+    public void b21(ActionEvent event) throws SQLException {
         Static.seat = T_one.getText();
-    }public void b22(){
+        Button(event);
+    }
+
+    public void b22(ActionEvent event) throws SQLException {
         Static.seat = T_two.getText();
-    }public void b23(){
+        Button(event);
+    }
+
+    public void b23(ActionEvent event) throws SQLException {
         Static.seat = T_three.getText();
-    }public void b24(){
+        Button(event);
+    }
+
+    public void b24(ActionEvent event) throws SQLException {
         Static.seat = T_four.getText();
-    }public void b25(){
+        Button(event);
+    }
+
+    public void b25(ActionEvent event) throws SQLException {
         Static.seat = T_five.getText();
-    }public void b26(){
+        Button(event);
+    }
+
+    public void b26(ActionEvent event) throws SQLException {
         Static.seat = T_six.getText();
-    }public void b27(){
+        Button(event);
+    }
+
+    public void b27(ActionEvent event) throws SQLException {
         Static.seat = T_s.getText();
-    }public void b28(){
+        Button(event);
+    }
+
+    public void b28(ActionEvent event) throws SQLException {
         Static.seat = T_eight.getText();
-    }public void b29(){
+        Button(event);
+    }
+
+    public void b29(ActionEvent event) throws SQLException {
         Static.seat = T_nine.getText();
-    }public void b30(){
+        Button(event);
+    }
+
+    public void b30(ActionEvent event) throws SQLException {
         Static.seat = Thirty.getText();
-    }public void b31(){
+        Button(event);
+    }
+
+    public void b31(ActionEvent event) throws SQLException {
         Static.seat = Th_one.getText();
-    }public void b32(){
+        Button(event);
+    }
+
+    public void b32(ActionEvent event) throws SQLException {
         Static.seat = Th_two.getText();
-    }public void b33(){
+        Button(event);
+    }
+
+    public void b33(ActionEvent event) throws SQLException {
         Static.seat = Th_three.getText();
-    }public void b34(){
+        Button(event);
+    }
+
+    public void b34(ActionEvent event) throws SQLException {
         Static.seat = Th_four.getText();
-    }public void b35(){
+        Button(event);
+    }
+
+    public void b35(ActionEvent event) throws SQLException {
         Static.seat = Th_five.getText();
-    }public void b36(){
+        Button(event);
+    }
+
+    public void b36(ActionEvent event) throws SQLException {
         Static.seat = Th_six.getText();
-    }public void b37(){
+        Button(event);
+    }
+
+    public void b37(ActionEvent event) throws SQLException {
         Static.seat = Th_seven.getText();
-    }public void b38(){
+        Button(event);
+    }
+
+    public void b38(ActionEvent event) throws SQLException {
         Static.seat = Th_eight.getText();
-    }public void b39(){
+        Button(event);
+    }
+
+    public void b39(ActionEvent event) throws SQLException {
         Static.seat = Th_nine.getText();
-    }public void b40(){
+        Button(event);
+    }
+
+    public void b40(ActionEvent event) throws SQLException {
         Static.seat = Forty.getText();
-    }public void b41(){
+        Button(event);
+    }
+
+    public void b41(ActionEvent event) throws SQLException {
         Static.seat = F_one.getText();
-    }public void b42(){
+        Button(event);
+    }
+
+    public void b42(ActionEvent event) throws SQLException {
         Static.seat = F_two.getText();
-    }public void b43(){
+        Button(event);
+    }
+
+    public void b43(ActionEvent event) throws SQLException {
         Static.seat = F_three.getText();
-    }public void b44(){
+        Button(event);
+    }
+
+    public void b44(ActionEvent event) throws SQLException {
         Static.seat = F_four.getText();
-    }public void b45(){
+        Button(event);
+    }
+
+    public void b45(ActionEvent event) throws SQLException {
         Static.seat = F_five.getText();
-    }public void b46(){
+        Button(event);
+    }
+
+    public void b46(ActionEvent event) throws SQLException {
         Static.seat = F_six.getText();
-    }public void b47(){
+        Button(event);
+    }
+
+    public void b47(ActionEvent event) throws SQLException {
         Static.seat = F_seven.getText();
-    }public void b48(){
+        Button(event);
+    }
+
+    public void b48(ActionEvent event) throws SQLException {
         Static.seat = F_eight.getText();
-    }public void b49(){
+        Button(event);
+    }
+
+    public void b49(ActionEvent event) throws SQLException {
         Static.seat = F_nine.getText();
-    }public void b50(){
+        Button(event);
+    }
+
+    public void b50(ActionEvent event) throws SQLException {
         Static.seat = Fifty.getText();
-    }public void b51(){
+        Button(event);
+    }
+
+    public void b51(ActionEvent event) throws SQLException {
         Static.seat = Fifty_one.getText();
-    }public void b52(){
+        Button(event);
+    }
+
+    public void b52(ActionEvent event) throws SQLException {
         Static.seat = Fifty_two.getText();
-    }public void b53(){
+        Button(event);
+    }
+
+    public void b53(ActionEvent event) throws SQLException {
         Static.seat = Fifty_three.getText();
-    }public void b54(){
+        Button(event);
+    }
+
+    public void b54(ActionEvent event) throws SQLException {
         Static.seat = Fifty_four.getText();
+        Button(event);
     }
 }
