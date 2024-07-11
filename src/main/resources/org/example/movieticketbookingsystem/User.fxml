@@ -33,7 +33,7 @@
                      </font>
                   </Label>
                   <FontAwesomeIcon fill="WHITE" fontSmoothingType="LCD" glyphName="USER" layoutX="40.0" layoutY="139.0" size="6em" />
-                  <Button layoutX="17.0" layoutY="330.0" mnemonicParsing="false" onAction="#Profile" prefHeight="40.0" prefWidth="112.0" styleClass="navbtn" stylesheets="@style.css" text="History">
+                  <Button layoutX="17.0" layoutY="330.0" mnemonicParsing="false" onAction="#history" prefHeight="40.0" prefWidth="112.0" styleClass="navbtn" stylesheets="@style.css" text="History">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -54,7 +54,7 @@
                         <ImageView fx:id="Cinema_information_imageview" fitHeight="175.0" fitWidth="178.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
                      </children>
                   </AnchorPane>
-                  <Button layoutX="642.0" layoutY="86.0" mnemonicParsing="false" onAction="#go" prefHeight="34.0" prefWidth="100.0" styleClass="btn" stylesheets="@style.css" text="Go" />
+                  <Button fx:id="go" layoutX="642.0" layoutY="86.0" mnemonicParsing="false" onAction="#go" prefHeight="34.0" prefWidth="100.0" styleClass="btn" stylesheets="@style.css" text="Go" />
                   <TableView fx:id="Movie_information_table" layoutX="14.0" layoutY="206.0" onMouseClicked="#select_movie" prefHeight="287.0" prefWidth="684.0" styleClass="table2" stylesheets="@style.css">
                     <columns>
                       <TableColumn fx:id="Title_table" prefWidth="131.19997549057007" text="Tiltle" />

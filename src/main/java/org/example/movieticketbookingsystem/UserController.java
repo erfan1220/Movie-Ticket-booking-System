@@ -190,6 +190,10 @@ public class UserController extends RegisterController implements Initializable 
         Switch s = new Switch();
         s.switchto(event , "Seat.fxml");
     }
+    public void history(ActionEvent event) throws IOException {
+        Switch s = new Switch();
+        s.switchto(event , "History.fxml");
+    }
 
 
 
