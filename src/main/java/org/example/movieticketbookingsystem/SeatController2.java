@@ -1,5 +1,6 @@
 package org.example.movieticketbookingsystem;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
@@ -165,19 +166,19 @@ public class SeatController2 extends ProfileController{
 
     @FXML
     private Button Two;
-    public void b1(){
+    public void b1(ActionEvent event){
         Static.seat = One.getText();
     }
-    public void b2(){
+    public void b2(ActionEvent event){
         Static.seat = Two.getText();
     }
-    public void b3(){
+    public void b3(ActionEvent event){
         Static.seat = Three.getText();
     }
-    public void b4(){
+    public void b4(ActionEvent event){
         Static.seat = Four.getText();
     }
-    public void b5(){
+    public void b5(ActionEvent event){
         Static.seat = Five.getText();
     }
     public void b6(){
