@@ -52,11 +52,13 @@
 -fx-background-color:transparent;
 -fx-border-color:#12e13f;
 -fx-border-width:0px 0px 2px 0px;
+-fx-font-size:15px;
 }
 .text-field-CreateAccount{
 -fx-background-color:transparent;
 -fx-border-color:#00d0ff;
 -fx-border-width:0px 0px 2px 0px;
+-fx-font-size:15px;
 }
 .textfield2{
 -fx-background-color:transparent;
@@ -101,24 +103,4 @@
 }
 .table2 .column-header .label{
 -fx-text-fill: #fff;
-}
-
-
-
-
-
-
-
-
-.right-side{
-    -fx-background-color: linear-gradient(to bottom left, #022BF7, #02F7BF);
-}
-.login-border2{
-    -fx-border-color: #286155;
-    -fx-border-width: 0 3px 0 3px;
-    -fx-padding: 0 5px 0 5px;
-}
-
-.side{
--fx-background-color: #fff;
 }

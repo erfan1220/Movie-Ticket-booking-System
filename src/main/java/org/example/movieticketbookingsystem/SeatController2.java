@@ -182,7 +182,7 @@ public class SeatController2 extends ProfileController {
         try {
             String sql = "SELECT Seat FROM seat WHERE Cinema = '" +
                     Static.cinema + "' AND MovieTitle = '" + Static.moviename + "' AND " +
-                    "Time = '" + Static.movietime + "' AND Seat = '"+Static.seat+"'";
+                    "Time = '" + Static.movietime + "' AND Seat = '" + Static.seat + "'";
             prepare = connect.prepareStatement(sql);
             resultSet = prepare.executeQuery();
             if (resultSet.next()) {
@@ -199,6 +199,7 @@ public class SeatController2 extends ProfileController {
                 prepare.executeUpdate();
 
                 insert();
+                mail();
 
                 alert = new Alert();
                 alert.information("Successful.");
@@ -209,6 +210,7 @@ public class SeatController2 extends ProfileController {
             e.printStackTrace();
         }
     }
+
     public void insert() throws SQLException {
         String sql = "INSERT INTO history (MovieTitle, Time,Cinema,user,Seat)" +
                 "VALUES(?,?,?,?,?)";
@@ -217,8 +219,25 @@ public class SeatController2 extends ProfileController {
         prepare.setString(2, Static.movietime);
         prepare.setString(3, Static.cinema);
         prepare.setString(4, Static.username);
-        prepare.setString(5,Static.seat);
+        prepare.setString(5, Static.seat);
         prepare.executeUpdate();
+    }
+
+    public void mail() throws SQLException {
+        connect = Database.CODB();
+        try {
+            String sql = "SELECT * FROM information WHERE username ='" + Static.username + "'";
+            prepare = connect.prepareStatement(sql);
+            resultSet = prepare.executeQuery();
+            while (resultSet.next()) {
+                Static s = new Static();
+                Email em = new Email();
+                em.email("sltanyh468@gmail.com", "mepm qybe pevi rxgd",
+                        resultSet.getString("email"), s.subject2, s.text2);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void b1(ActionEvent event) throws SQLException {

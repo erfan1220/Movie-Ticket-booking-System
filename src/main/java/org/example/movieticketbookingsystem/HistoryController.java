@@ -75,7 +75,7 @@ public class HistoryController implements Initializable {
     }
     public ObservableList<HistoryData> history() throws SQLException {
         ObservableList<HistoryData> listData = FXCollections.observableArrayList();
-        String sql = "SELECT * FROM history";
+        String sql = "SELECT * FROM history WHERE user ='"+Static.username+"'";
         connect = Database.CODB();
 
         try{

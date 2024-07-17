@@ -6,8 +6,7 @@ import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 
 public class Email {
-    Static s = new Static();
-    public void email(String fromMail, String fromPassword, String toMail) {
+    public void email(String fromMail, String fromPassword, String toMail,String subject , String text) {
         try {
             final String user = fromMail, password = fromPassword;
             Properties prop = new Properties();
@@ -30,9 +29,9 @@ public class Email {
 
             msg.setFrom(new InternetAddress(fromMail));
             msg.setRecipient(Message.RecipientType.TO, new InternetAddress(toMail));
-            msg.setSubject(s.subject);
-            msg.setText(s.text);
-            msg.setContent(s.text, "text/html");
+            msg.setSubject(subject);
+            msg.setText(text);
+            msg.setContent(text, "text/html");
 
             Transport.send(msg);
             System.out.println("successfully sent");

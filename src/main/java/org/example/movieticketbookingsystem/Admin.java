@@ -144,9 +144,7 @@ public class Admin extends RegisterController implements Initializable {
         image = new Image(uri,178,175,false,true);
         add_cinema_imageview.setImage(image);
         Static.cinema = CD.getName();
-        //System.out.println(Static.cinema);
         Static.path = CD.getImage();
-        //System.out.println(Static.path);
     }
     public void addmovie(ActionEvent event) throws IOException {
         Switch s =new Switch();

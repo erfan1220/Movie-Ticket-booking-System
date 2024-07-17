@@ -41,9 +41,10 @@ public class RegisterController {
                     "VALUES(?,?,?,?)";
             connect = Database.CODB();
             Static.usernameC = username.getText();
-            //Email il = new Email();
-            //il.email("sltanyh468@gmail.com","vtesxybfbodpkhvq",
-             //       email.getText());
+            Email il = new Email();
+            Static s = new Static();
+            il.email("sltanyh468@gmail.com","mepm qybe pevi rxgd",
+                    email.getText(),s.subject,s.text);
             prepare = connect.prepareStatement(create);
             prepare.setString(1, username.getText());
             prepare.setString(2, password.getText());
